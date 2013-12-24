@@ -1,3 +1,9 @@
+libedit (2.11-20080614-3ubuntu2pexip1) pexip; urgency=low
+
+  * Prepare Pexip packaging
+
+ -- John-Mark Bell <jmb@pexip.com>  Tue, 24 Dec 2013 21:32:29 +0000
+
 libedit (2.11-20080614-3ubuntu2) precise; urgency=low
 
   * Fix libdir in libedit.pc to match multiarch installation paths.
