@@ -1,3 +1,139 @@
+libedit (3.1-20140620-2) unstable; urgency=medium
+
+  * Upload in unstable with the UTF-8 changes.
+    In theory, this should be painless because it just adds new symbols.
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 10 Aug 2014 17:51:57 +0200
+
+libedit (3.1-20140620-2~exp1) experimental; urgency=medium
+
+  * Fix rl_callback_read_char() (Closes: #754045)
+  * Really enable UTF-8 (Closes: #756736, #737786)
+    (LP: #816758) and update the symbols
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 07 Jul 2014 10:14:34 +0200
+
+libedit (3.1-20140620-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 06 Jul 2014 19:03:56 +0200
+
+libedit (3.1-20140213-1) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 12 Mar 2014 15:19:30 +0100
+
+libedit (3.1-20140213-1~exp1) experimental; urgency=medium
+
+  * New upstream release
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 19 Feb 2014 12:55:46 +0100
+
+libedit (3.1-20130712-3~exp1) experimental; urgency=low
+
+  * Add option --enable-widec to get UTF-8 support (Closes: #737786)
+    (LP: #816758, #1276836)
+  * Fix the description (Closes: #722083)
+  * Standards-Version updated to 3.9.5
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 07 Feb 2014 15:55:26 +0200
+
+libedit (3.1-20130712-2) unstable; urgency=low
+
+  * Fix the co installation problem with libeditline-dev (Closes: #720636)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 27 Aug 2013 15:55:26 +0200
+
+libedit (3.1-20130712-1) unstable; urgency=low
+
+  * Upload to unstable
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 23 Aug 2013 11:09:13 +0200
+
+libedit (3.1-20130712-1~exp3) experimental; urgency=low
+
+  * Fix the FTBFS under HURD. Thanks to Pino Toscano (Closes: #719800)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Thu, 15 Aug 2013 16:09:35 +0200
+
+libedit (3.1-20130712-1~exp2) experimental; urgency=low
+
+  * Use system functions instead of embeded's (Closes: #718721)
+  * Remove deprecated fix_gcc_warnings.diff
+  * Remove useless 01-Makefile.diff
+  * Thanks to Guillem Jover for these 3 fixes
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 05 Aug 2013 10:15:59 +0200
+
+libedit (3.1-20130712-1~exp1) experimental; urgency=low
+
+  * New upstream release (20130611-3.1)
+    - Thanks to their switch to the autotools, we can use a simple dh helper
+    (Closes: #579729)
+  * Move package maintenance as a collab-maint git project
+  * Install manpages (including editrc). (Closes: #612826)
+  * Add of the Vcs tags
+  * Update of the homepage (Closes: #715017)
+  * Add watch file (Closes: #715018)
+  * Add a symbol file for libedit:
+    1) Created a symbol file from the 2.11-20080614-6 release
+    2) Update of the symbol file from this release
+    3) Remove the -X version
+  * Add myself among the uploaders and change the maintainer to the
+    pkg-llvm team
+  * Use upstream libedit.pc
+  * Update of the description
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 07 Jul 2013 12:49:25 +0200
+
+libedit (2.11-20080614-6) unstable; urgency=low
+
+  * Merge 2.11-20080614-5ubuntu1
+    Fix cross-building: set RANLIB as well as CC/LD, and set MACHINE_ARCH
+    and MACHINE_MULTIARCH correctly to allow for use of a foreign pmake
+    binary.  Closes: #694910
+  * Standards Version is 3.9.4
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Thu, 06 Jun 2013 10:51:40 +1000
+
+libedit (2.11-20080614-5ubuntu1) raring; urgency=low
+
+  * Fix cross-building: set RANLIB as well as CC/LD, and set MACHINE_ARCH
+    and MACHINE_MULTIARCH correctly to allow for use of a foreign pmake
+    binary.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Sun, 02 Dec 2012 00:47:07 +0000
+
+libedit (2.11-20080614-5) unstable; urgency=low
+
+  * Add LDFLAGS hardening flags to PMAKE_ARGS
+    Patch by Simon Ruderich
+    Closes: #675404 
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Fri, 01 Jun 2012 10:10:48 +1000
+
+libedit (2.11-20080614-4) unstable; urgency=low
+
+  * Merge 2.11-20080614-3ubuntu2 
+    - Fix libdir in libedit.pc to match multiarch installation paths.
+    - libedit/tty.c: grabs controlling terminal even when output is a non
+      tty, causing things like php | less to mis-function. Patch changes
+      this behavior to work more like readline. (LP: #322214)
+  * debian/control: Don't use the Vcs-Browser field
+    Closes: #534514
+  * Link against libtinfo rather than libncurses
+    Patch by Sven Joachim
+    Closes: #644421
+  * Remove <libedit/vis.h>
+    Closes: #675147
+  * Standards-Version is 3.9.3
+  * DH compatibility is 9
+  * Enable hardening
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Thu, 31 May 2012 13:56:17 +1000
+
 libedit (2.11-20080614-3ubuntu2) precise; urgency=low
 
   * Fix libdir in libedit.pc to match multiarch installation paths.
