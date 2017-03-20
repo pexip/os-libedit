@@ -9,7 +9,7 @@ Build-Depends: debhelper (>= 7), quilt, pmake (>= 1.45-8), groff-base,
 Standards-Version: 3.9.2
 Vcs-Browser: http://cvsweb.netbsd.org/bsdweb.cgi/src/lib/libedit/
 Homepage: http://ftp.netbsd.org/pub/NetBSD/NetBSD-current/src/lib/libedit/
-XS-Pexip-Upstream: http://archive.ubuntu.com/ubuntu/ precise
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ jessie
 
 Package: libedit2
 Section: libs
