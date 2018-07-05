@@ -11,7 +11,7 @@ Standards-Version: 3.9.5
 Vcs-Git: git://git.debian.org/collab-maint/libedit.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/libedit.git;a=summary
 Homepage: http://www.thrysoee.dk/editline/
-XS-Pexip-Upstream: http://ftp.debian.org/debian/ jessie
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ stretch
 
 Package: libedit2
 Section: libs
