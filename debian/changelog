@@ -1,3 +1,67 @@
+libedit (3.1-20160903-3) unstable; urgency=medium
+
+  * Fix the wrong links to the manpage (Closes: #851700)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 18 Jan 2017 13:23:36 +0100
+
+libedit (3.1-20160903-2) unstable; urgency=medium
+
+  * Add libncurses5-dev as a dependency of libedit-dev (Closes: #844573)
+    Now officially required by upstream
+  * Fix the vcs fields
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 21 nov 2016 16:20:15 +0100
+
+libedit (3.1-20160903-1) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 09 Nov 2016 20:42:38 +0100
+
+libedit (3.1-20160903-1~exp1) experimental; urgency=medium
+
+  * New upstream release
+    Two new symbols:
+      - history_list
+      - history_offset
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 01 Nov 2016 15:53:02 +0100
+
+libedit (3.1-20160618-1~exp1) experimental; urgency=medium
+
+  * New upstream release
+  * Upstream moved many symbols as private. Because 236 are now missing,
+    I am concerned about potential regressions even if upstream
+    didn't bump the soname
+  * Fix: Libraries must be added to LIBS instead of LDFLAGS
+    (Closes: #794009)
+  * Standards-Version updated 3.9.8
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sat, 25 Jun 2016 23:23:46 +0200
+
+libedit (3.1-20150325-1) unstable; urgency=medium
+
+  * New upstream release
+  * Upload to unstable
+  * Update of the symbol file
+    (ct_conv_cbuff_resize & ct_conv_wbuff_resize introduced)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 28 Apr 2015 09:53:42 +0200
+
+libedit (3.1-20141030-1~exp2) experimental; urgency=medium
+
+  * Fix a conflict on libedit manpage (Closes: #774972)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 12 Jan 2015 08:58:58 +0100
+
+libedit (3.1-20141030-1~exp1) experimental; urgency=medium
+
+  * New upstream release
+  * Update the symbol file (two new symbols)
+  * Standards-Version updated to 3.9.6
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 14 Nov 2014 11:13:53 +0100
+
 libedit (3.1-20140620-2pexip1) pexip; urgency=low
 
   * Migrate to Jessie

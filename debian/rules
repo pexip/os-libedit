@@ -6,7 +6,25 @@
 	dh $@ --with autoreconf
 
 override_dh_auto_configure:
-	dh_auto_configure -- --disable-silent-rules --enable-widec
+	dh_auto_configure -- --disable-silent-rules --enable-widec --enable-examples
+	mv doc/editline.3.roff doc/editline.3edit.roff
 
 override_dh_strip:
 	dh_strip --dbg-package=libedit2-dbg
+
+override_dh_installdeb:
+	dh_installdeb
+	# Workaround for bug #774972
+	mv debian/libedit-dev/usr/share/man/man3/editline.3.gz debian/libedit-dev/usr/share/man/man3/editline.3edit.gz
+	# Workaround for bug #851700
+	cd debian/libedit-dev/usr/share/man/man3/; \
+	MANPAGES=$$(ls -1 *.3); \
+	for f in $$MANPAGES; do \
+		rm -f $$f && ln -s editline.3edit.gz $$f.gz; \
+	done
+
+override_dh_clean:
+	dh_clean
+	if test -f doc/editline.3edit.roff; then \
+		mv doc/editline.3edit.roff doc/editline.3.roff; \
+	fi
