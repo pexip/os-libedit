@@ -1,3 +1,9 @@
+libedit (3.1-20160903-3pexip1) pexip; urgency=medium
+
+  * Migrate to Stretch
+
+ -- John-Mark Bell <jmb@pexip.com>  Tue, 10 Jul 2018 00:19:56 +0000
+
 libedit (3.1-20160903-3) unstable; urgency=medium
 
   * Fix the wrong links to the manpage (Closes: #851700)
