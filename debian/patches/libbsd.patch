@@ -1,13 +1,29 @@
-Index: libedit/configure.ac
-===================================================================
---- libedit.orig/configure.ac
-+++ libedit/configure.ac
-@@ -117,24 +117,38 @@ AC_PROG_GCC_TRADITIONAL
+---
+ configure.ac |   21 ++++++++++++++++-----
+ 1 file changed, 16 insertions(+), 5 deletions(-)
+
+--- a/configure.ac
++++ b/configure.ac
+@@ -54,6 +54,13 @@ AC_CHECK_LIB(ncurses, tgetent,,
+   )]
+ )
+ 
++PKG_CHECK_MODULES(LIBBSD, [libbsd-overlay],
++  [CFLAGS="$CFLAGS $LIBBSD_CFLAGS"
++   LIBS="$LIBS $LIBBSD_LIBS"
++   MODULES="$MODULES libbsd"
++   AC_SUBST([MODULES])]
++)
++
+ ### deprecate option --enable-widec to turn on use of wide-character support
+ EL_DEPRECATE_WIDEC
+ 
+@@ -117,22 +124,26 @@ AC_PROG_GCC_TRADITIONAL
  #AC_FUNC_REALLOC
  AC_TYPE_SIGNAL
  AC_FUNC_STAT
 -AC_CHECK_FUNCS([endpwent isascii memchr memset re_comp regcomp strcasecmp strchr strcspn strdup strerror strrchr strstr strtol issetugid wcsdup strlcpy strlcat getline vis strvis strunvis __secure_getenv secure_getenv])
-+AC_CHECK_FUNCS([endpwent isascii memchr memset re_comp regcomp strcasecmp strchr strcspn strdup strerror strrchr strstr strtol issetugid getline __secure_getenv secure_getenv])
++AC_CHECK_FUNCS([endpwent isascii memchr memset re_comp regcomp strcasecmp strchr strcspn strdup strerror strrchr strstr strtol issetugid wcsdup getline __secure_getenv secure_getenv])
 +
 +# fgetln
 +AC_CHECK_FUNCS(fgetln, found_fgetln=yes, found_fgetln=no)
@@ -33,16 +49,4 @@ Index: libedit/configure.ac
 +AC_CHECK_FUNCS(unvis, found_unvis=yes, found_unvis=no)
  AM_CONDITIONAL(HAVE_UNVIS, [test "x$found_unvis" = xyes])
  
-+# wcsdup
-+AC_CHECK_FUNCS(wcsdup, found_wcsdup=yes, found_wcsdup=no)
-+AM_CONDITIONAL(HAVE_WCSDUP, [test "x$found_wcsdup" = xyes])
-+
-+PKG_CHECK_MODULES(LIBBSD, [libbsd-overlay],
-+  [CFLAGS="$CFLAGS $LIBBSD_CFLAGS"
-+   LIBS="$LIBS $LIBBSD_LIBS"
-+   MODULES="$MODULES libbsd"
-+   AC_SUBST([MODULES])]
-+)
  
- EL_GETPW_R_POSIX
- EL_GETPW_R_DRAFT

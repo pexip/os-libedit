@@ -1,4 +1,4 @@
-/*	$NetBSD: readline.h,v 1.40 2016/08/24 13:10:59 christos Exp $	*/
+/*	$NetBSD: readline.h,v 1.44 2018/12/02 16:58:13 christos Exp $	*/
 
 /*-
  * Copyright (c) 1997 The NetBSD Foundation, Inc.
@@ -38,11 +38,13 @@
 
 /* typedefs */
 typedef int	  Function(const char *, int);
+typedef char     *CPFunction(const char *, int);
 typedef void	  VFunction(void);
 typedef void	  rl_vcpfunc_t(char *);
 typedef char	**rl_completion_func_t(const char *, int, int);
 typedef char     *rl_compentry_func_t(const char *, int);
 typedef int	  rl_command_func_t(int, int);
+typedef int	  rl_hook_func_t(void);
 
 /* only supports length */
 typedef struct {
@@ -121,6 +123,7 @@ extern Function		*rl_startup_hook;
 extern char		*rl_terminal_name;
 extern int		rl_already_prompted;
 extern char		*rl_prompt;
+extern int		rl_done;
 /*
  * The following is not implemented
  */
@@ -136,6 +139,7 @@ extern VFunction	*rl_redisplay_function;
 extern VFunction	*rl_completion_display_matches_hook;
 extern VFunction	*rl_prep_term_function;
 extern VFunction	*rl_deprep_term_function;
+extern rl_hook_func_t	*rl_event_hook;
 extern int		readline_echoing_p;
 extern int		_rl_print_completions_horizontally;
 
@@ -146,6 +150,7 @@ int		 rl_initialize(void);
 void		 using_history(void);
 int		 add_history(const char *);
 void		 clear_history(void);
+int		 append_history(int, const char *);
 void		 stifle_history(int);
 int		 unstifle_history(void);
 int		 history_is_stifled(void);
@@ -175,12 +180,13 @@ char		*filename_completion_function(const char *, int);
 char		*username_completion_function(const char *, int);
 int		 rl_complete(int, int);
 int		 rl_read_key(void);
-char	       **completion_matches(const char *, rl_compentry_func_t *);
+char	       **completion_matches(/* const */ char *, rl_compentry_func_t *);
 void		 rl_display_match_list(char **, int, int);
 
 int		 rl_insert(int, int);
 int		 rl_insert_text(const char *);
 void		 rl_reset_terminal(const char *);
+void		 rl_resize_terminal(void);
 int		 rl_bind_key(int, rl_command_func_t *);
 int		 rl_newline(int, int);
 void		 rl_callback_read_char(void);
@@ -205,6 +211,8 @@ char	       **rl_completion_matches(const char *, rl_compentry_func_t *);
 void		 rl_forced_update_display(void);
 int		 rl_set_prompt(const char *);
 int		 rl_on_new_line(void);
+void		 rl_reset_after_signal(void);
+void		 rl_echo_signal_char(int);
 
 /*
  * The following are not implemented

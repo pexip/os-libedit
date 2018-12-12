@@ -1,4 +1,4 @@
-/*	$NetBSD: chartype.c,v 1.30 2016/05/09 21:46:56 christos Exp $	*/
+/*	$NetBSD: chartype.c,v 1.34 2018/11/25 16:20:28 christos Exp $	*/
 
 /*-
  * Copyright (c) 2009 The NetBSD Foundation, Inc.
@@ -31,10 +31,11 @@
  */
 #include "config.h"
 #if !defined(lint) && !defined(SCCSID)
-__RCSID("$NetBSD: chartype.c,v 1.30 2016/05/09 21:46:56 christos Exp $");
+__RCSID("$NetBSD: chartype.c,v 1.34 2018/11/25 16:20:28 christos Exp $");
 #endif /* not lint && not SCCSID */
 
 #include <ctype.h>
+#include <limits.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -156,7 +157,7 @@ ct_decode_argv(int argc, const char *argv[], ct_buffer_t *conv)
 		if (ct_conv_wbuff_resize(conv, bufspace + CT_BUFSIZ) == -1)
 			return NULL;
 
-	wargv = el_malloc((size_t)argc * sizeof(*wargv));
+	wargv = el_malloc((size_t)(argc + 1) * sizeof(*wargv));
 
 	for (i = 0, p = conv->wbuff; i < argc; ++i) {
 		if (!argv[i]) {   /* don't pass null pointers to mbstowcs */
@@ -174,6 +175,7 @@ ct_decode_argv(int argc, const char *argv[], ct_buffer_t *conv)
 		bufspace -= (size_t)bytes;
 		p += bytes;
 	}
+	wargv[i] = NULL;
 
 	return wargv;
 }
@@ -182,17 +184,14 @@ ct_decode_argv(int argc, const char *argv[], ct_buffer_t *conv)
 libedit_private size_t
 ct_enc_width(wchar_t c)
 {
-	/* UTF-8 encoding specific values */
-	if (c < 0x80)
-		return 1;
-	else if (c < 0x0800)
-		return 2;
-	else if (c < 0x10000)
-		return 3;
-	else if (c < 0x110000)
-		return 4;
-	else
-		return 0; /* not a valid codepoint */
+	mbstate_t mbs;
+	char buf[MB_LEN_MAX];
+	size_t size;
+	memset(&mbs, 0, sizeof(mbs));
+
+	if ((size = wcrtomb(buf, c, &mbs)) == (size_t)-1)
+		return 0;
+	return size;
 }
 
 libedit_private ssize_t
