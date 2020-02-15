@@ -11,7 +11,7 @@ Standards-Version: 3.9.8
 Vcs-Git: git://anonscm.debian.org/collab-maint/libedit.git
 Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/libedit.git/
 Homepage: http://www.thrysoee.dk/editline/
-XS-Pexip-Upstream: http://ftp.debian.org/debian/ stretch
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ buster
 
 Package: libedit2
 Section: libs
