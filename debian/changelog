@@ -1,3 +1,9 @@
+libedit (3.1-20181209-1pexip1) pexip; urgency=medium
+
+  * Migrate to Buster
+
+ -- Vincent Sanders <vince@pexip.com>  Sat, 29 Feb 2020 09:12:43 +0000
+
 libedit (3.1-20181209-1) unstable; urgency=medium
 
   [ Guillem Jover ]
