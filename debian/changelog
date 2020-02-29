@@ -1,3 +1,88 @@
+libedit (3.1-20181209-1) unstable; urgency=medium
+
+  [ Guillem Jover ]
+  * Remove doubled heading spaces from Copyright field in debian/copyright.
+  * Move examples installation from dh_installdocs override into an .examples
+    debhelper fragment file, and remove the now unnecessary override.
+  * Add a comment to debian/rules to remove the dh_compress override on
+    debhelper compatibility level 12.
+
+  [ Sylvestre Ledru ]
+  * New upstream release
+  * Two new symbols:
+    - rl_echo_signal_char
+    - rl_reset_after_signal
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 12 Dec 2018 08:55:07 +0100
+
+libedit (3.1-20180525-2~exp1) experimental; urgency=medium
+
+  [ Guillem Jover ]
+  * Fix libbsd.patch so that the library is detected and used early in
+    configure before checking for symbols provided by it, to avoid ending
+    up using the embedded code copies. (Closes: #893934)
+  * Wrap fields in debian/control.
+  * Bump debhelper compatibility level to 11.
+    - Remove old dpkg-dev Build-Depends, satisfied in oldstable, and
+      superseded by debhelper's dependency.
+    - Remove autoreconf addon, now enabled by default, and dh-autoreconf
+      from Build-Depends.
+    - Remove debian/tmp from libedit-dev.manpages file.
+  * Switch to an automatic debug symbols package.
+  * Remove custom compression options from debian/source/options.
+  * Stop passing unknown --disable-maintainer-mode and obsolete --enable-widec
+    options to configure.
+  * Move packages from priority standard to optional.
+  * Append a -0 to each present symbol in the .symbols file, so that the
+    versions are properly compared, given that the upstream part contains
+    a dash, otherwise dpkg-dev tools get confused as they strip the version
+    revision for the comparison. (Closes: #911341)
+  * Remove redundant or obsolete information from debian/copyright file.
+  * Switch debian/copyright to the machine readable format 1.0.
+  * Set Rules-Requires-Root to no.
+  * Bump Standards-Version to 4.2.1.
+  * Bump minimum version in .shlibs file.
+  * Sort pathnames in debhelper fragment files.
+  * Add a new patch to use system's wcsdup() function if available.
+  * Use https for upstream homepage.
+  * Move Apple time machine file cleanup to the dh_clean override.
+  * Improve man page handling:
+    - Move the bulk of the logic to the upstream Makefile.am, and remove it
+      from the debian/rules.
+    - Change the sections within the man pages and the references to Xedit.
+  * Install editrc(5edit) and editline(7edit) man pages in libedit2.
+    (Closes: #877309)
+  * Improve termcap usage:
+    - Switch to (build-)depending on «libncurses-dev | libtinfo-dev» instead
+      of the deprecated libncurses5-dev.
+    - Add a patch to prefer linking against libtermcap instead of ncurses.
+      The code really wants a termcap compatible interface, and not the
+      main ncurses library.
+  * Switch to debian/watch format version 4.
+
+ -- Guillem Jover <guillem@debian.org>  Sat, 27 Oct 2018 19:33:12 +0200
+
+libedit (3.1-20180525-1) unstable; urgency=medium
+
+  * New upstream release
+    - New symbols:
+      append_history
+      rl_did_startup_hook
+      rl_resize_terminal
+  * Standards-Version updated 4.1.3
+  * Package moved on salsa
+  * libedit2-dbg moved to extra
+  * Ship examples/ in libedit-dev
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 30 May 2018 11:08:31 +0200
+
+libedit (3.1-20170329-1) unstable; urgency=medium
+
+  * New upstream release
+  * Standards-Version updated 4.0.0
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 20 Jun 2017 00:11:48 +0200
+
 libedit (3.1-20160903-3pexip1) pexip; urgency=medium
 
   * Migrate to Stretch
@@ -186,13 +271,13 @@ libedit (2.11-20080614-5) unstable; urgency=low
 
   * Add LDFLAGS hardening flags to PMAKE_ARGS
     Patch by Simon Ruderich
-    Closes: #675404 
+    Closes: #675404
 
  -- Anibal Monsalve Salazar <anibal@debian.org>  Fri, 01 Jun 2012 10:10:48 +1000
 
 libedit (2.11-20080614-4) unstable; urgency=low
 
-  * Merge 2.11-20080614-3ubuntu2 
+  * Merge 2.11-20080614-3ubuntu2
     - Fix libdir in libedit.pc to match multiarch installation paths.
     - libedit/tty.c: grabs controlling terminal even when output is a non
       tty, causing things like php | less to mis-function. Patch changes
@@ -267,15 +352,15 @@ libedit (2.11-20080614-2.1) unstable; urgency=low
 
 libedit (2.11-20080614-2) unstable; urgency=high
 
-  * libedit2.shlibs: Fix minimal dependency version 
+  * libedit2.shlibs: Fix minimal dependency version
     Patch by Agustin Martin
-    Closes: 523260 
+    Closes: 523260
 
  -- Anibal Monsalve Salazar <anibal@debian.org>  Tue, 21 Sep 2010 12:24:54 +1000
 
 libedit (2.11-20080614-1) unstable; urgency=low
 
-  * Fix typo in 03-el.c-MAXPATHLEN.diff 
+  * Fix typo in 03-el.c-MAXPATHLEN.diff
   * Standards version is 3.8.2
   * Use libbsd
     Patch by Guillem Jover
@@ -285,7 +370,7 @@ libedit (2.11-20080614-1) unstable; urgency=low
 
 libedit (2.11~20080614-2) unstable; urgency=low
 
-  * Merge with Ubuntu 
+  * Merge with Ubuntu
     - debian/patches/20-fortify.patch: handle error conditions found
       by -D_FORTIFY_SOURCE=2; closes: #488456
   * Suggests libbsd0; closes: #513027
