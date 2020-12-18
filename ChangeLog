@@ -1,6 +1,32 @@
    * See also NetBSD changelog:
 	http://cvsweb.netbsd.org/bsdweb.cgi/src/lib/libedit
 
+2019-12-31 Jess Thrysoee
+
+   * version-info: 0:63:0
+
+   * configure.ac: Support -ltinfo as split in newer ncurses
+	The newer versions of ncurses support building terminfo routines as a split -ltinfo library.
+	Patch by Michał Górny
+
+2019-12-11 Jess Thrysoee
+
+   * version-info: 0:62:0
+
+   * all: sync with upstream source
+
+2019-10-25 Jess Thrysoee
+
+   * version-info: 0:61:0
+
+   * all: sync with upstream source
+
+2019-03-24 Jess Thrysoee
+
+   * version-info: 0:60:0
+
+   * all: sync with upstream source
+
 2018-12-09 Jess Thrysoee
 
    * version-info: 0:59:0

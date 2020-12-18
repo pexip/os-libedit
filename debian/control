@@ -7,7 +7,7 @@ Uploaders:
  Sylvestre Ledru <sylvestre@debian.org>,
 Rules-Requires-Root: no
 Build-Depends:
- debhelper (>= 11),
+ debhelper-compat (= 13),
  pkg-config,
  groff-base,
  libbsd-dev (>= 0.1.3),
@@ -50,3 +50,19 @@ Description: BSD editline and history libraries (development files)
  history, and tokenization functions.
  .
  It slightly resembles GNU readline.
+
+Package: libeditreadline-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends:
+ ${misc:Depends},
+ libedit-dev
+Conflicts: libreadline-dev, libreadline5-dev, libreadline-gplv2-dev
+Description: BSD editline and history libraries (shim development files)
+ GNU readline changed its license from GPL-2 to GPL-3 with version 6,
+ which excludes GPL-2-only programs from using current readline versions.
+ editline resembles readline functionally and with regards to its API.
+ .
+ This is a development shim library that can be used to link a GPL-2-only
+ program that depends on readline with editline.

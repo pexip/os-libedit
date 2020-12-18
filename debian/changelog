@@ -1,3 +1,40 @@
+libedit (3.1-20191231-2) unstable; urgency=medium
+
+  * Update debhelper compat to v13
+  * Add a shim readline development library (Closes: #977664)
+
+ -- Bastian Germann <bastiangermann@fishpost.de>  Fri, 18 Dec 2020 15:52:09 +0100
+
+libedit (3.1-20191231-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 03 Jan 2020 09:30:17 +0100
+
+libedit (3.1-20191211-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 22 Dec 2019 12:05:36 +0100
+
+libedit (3.1-20191025-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 28 Oct 2019 18:30:09 +0100
+
+libedit (3.1-20190324-1) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 07 Jul 2019 10:02:27 +0200
+
+libedit (3.1-20190324-1~exp1) experimental; urgency=medium
+
+  * New upstream release
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 02 Apr 2019 12:06:41 +0200
+
 libedit (3.1-20181209-1) unstable; urgency=medium
 
   [ Guillem Jover ]

@@ -2,9 +2,11 @@
  configure.ac |   21 ++++++++++++++++-----
  1 file changed, 16 insertions(+), 5 deletions(-)
 
---- a/configure.ac
-+++ b/configure.ac
-@@ -54,6 +54,13 @@ AC_CHECK_LIB(ncurses, tgetent,,
+Index: libedit/configure.ac
+===================================================================
+--- libedit.orig/configure.ac
++++ libedit/configure.ac
+@@ -56,6 +56,13 @@ AC_CHECK_LIB(ncurses, tgetent,,
    )]
  )
  
@@ -18,7 +20,7 @@
  ### deprecate option --enable-widec to turn on use of wide-character support
  EL_DEPRECATE_WIDEC
  
-@@ -117,22 +124,26 @@ AC_PROG_GCC_TRADITIONAL
+@@ -119,22 +126,26 @@ AC_PROG_GCC_TRADITIONAL
  #AC_FUNC_REALLOC
  AC_TYPE_SIGNAL
  AC_FUNC_STAT
