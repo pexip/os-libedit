@@ -3,9 +3,11 @@
  src/Makefile.am |    4 +++-
  2 files changed, 8 insertions(+), 2 deletions(-)
 
---- a/configure.ac
-+++ b/configure.ac
-@@ -124,7 +124,7 @@ AC_PROG_GCC_TRADITIONAL
+Index: libedit/configure.ac
+===================================================================
+--- libedit.orig/configure.ac
++++ libedit/configure.ac
+@@ -126,7 +126,7 @@ AC_PROG_GCC_TRADITIONAL
  #AC_FUNC_REALLOC
  AC_TYPE_SIGNAL
  AC_FUNC_STAT
@@ -14,7 +16,7 @@
  
  # fgetln
  AC_CHECK_FUNCS(fgetln, found_fgetln=yes, found_fgetln=no)
-@@ -146,6 +146,10 @@ AM_CONDITIONAL(HAVE_VIS, [test "x$found_
+@@ -148,6 +148,10 @@ AM_CONDITIONAL(HAVE_VIS, [test "x$found_
  AC_CHECK_FUNCS(unvis, found_unvis=yes, found_unvis=no)
  AM_CONDITIONAL(HAVE_UNVIS, [test "x$found_unvis" = xyes])
  
@@ -25,8 +27,10 @@
  
  EL_GETPW_R_POSIX
  EL_GETPW_R_DRAFT
---- a/src/Makefile.am
-+++ b/src/Makefile.am
+Index: libedit/src/Makefile.am
+===================================================================
+--- libedit.orig/src/Makefile.am
++++ libedit/src/Makefile.am
 @@ -27,7 +27,6 @@ CLEANFILES = $(BUILT_SOURCES)
  lib_LTLIBRARIES    = libedit.la
  libedit_la_SOURCES = chared.c common.c el.c eln.c emacs.c hist.c keymacro.c map.c chartype.c parse.c \
