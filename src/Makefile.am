@@ -27,7 +27,7 @@ CLEANFILES = $(BUILT_SOURCES)
 lib_LTLIBRARIES    = libedit.la
 libedit_la_SOURCES = chared.c common.c el.c eln.c emacs.c hist.c keymacro.c map.c chartype.c parse.c \
 							prompt.c read.c refresh.c search.c sig.c terminal.c tty.c vi.c \
-							wcsdup.c \
+							reallocarr.c wcsdup.c \
 							tokenizer.c tokenizern.c \
 							history.c historyn.c \
 							filecomplete.c readline.c chared.h literal.c el.h hist.h \
@@ -40,6 +40,9 @@ libedit_la_SOURCES += strlcpy.c
 endif
 if !HAVE_STRLCAT
 libedit_la_SOURCES += strlcat.c
+endif
+if !HAVE_GETLINE
+libedit_la_SOURCES += getline.c
 endif
 if !HAVE_VIS
 libedit_la_SOURCES += vis.c

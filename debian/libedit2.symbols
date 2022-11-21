@@ -3,6 +3,10 @@ libedit.so.2 libedit2 #MINVER#
 #MISSING: 3.1-20160618-1# __ct_encode_string@Base 3.1-20140620
  _el_fn_complete@Base 2.11-20080614-0
  _rl_abort_internal@Base 2.11-20080614-0
+ _rl_complete_mark_directories@Base 3.1-20210910
+ _rl_completion_prefix_display_length@Base 3.1-20210910
+ _rl_echoing_p@Base 3.1-20210910
+ _rl_erase_entire_line@Base 3.1-20210910
  _rl_print_completions_horizontally@Base 2.11-20080614-0
  _rl_qsort_string_compare@Base 2.11-20080614-0
  add_history@Base 2.11-20080614-0
@@ -141,10 +145,12 @@ libedit.so.2 libedit2 #MINVER#
  emacs_standard_keymap@Base 2.11-20080614-0
 #MISSING: 3.1-20180525-1# fgetln@Base 3.1-20141030
  filename_completion_function@Base 2.11-20080614-0
+ fn_complete2@Base 3.1-20210419-1
  fn_complete@Base 2.11-20080614-0
  fn_display_match_list@Base 2.11-20080614-0
  fn_filename_completion_function@Base 2.11-20080614-0
  fn_tilde_expand@Base 2.11-20080614-0
+ free_history_entry@Base 3.1-20210910
 #MISSING: 3.1-20160618-1# func__get@Base 3.1-20130611
  get_history_event@Base 2.11-20080614-0
 #MISSING: 3.1-20160618-1# help__get@Base 3.1-20130611
@@ -168,6 +174,7 @@ libedit.so.2 libedit2 #MINVER#
  history_is_stifled@Base 2.11-20080614-0
  history_length@Base 2.11-20080614-0
  history_list@Base 3.1-20160903-0
+ history_max_entries@Base 3.1-20210910
  history_no_expand_chars@Base 2.11-20080614-0
  history_offset@Base 3.1-20160903-0
  history_search@Base 2.11-20080614-0
@@ -231,10 +238,12 @@ libedit.so.2 libedit2 #MINVER#
  readline_echoing_p@Base 2.11-20080614-0
  remove_history@Base 2.11-20080614-0
  replace_history_entry@Base 3.1-20130611-0
+ rl_abort@Base 3.1-20210910
  rl_add_defun@Base 2.11-20080614-0
  rl_already_prompted@Base 2.11-20080614-0
  rl_attempted_completion_function@Base 2.11-20080614-0
  rl_attempted_completion_over@Base 2.11-20080614-0
+ rl_basic_quote_characters@Base 3.1-20210910
  rl_basic_word_break_characters@Base 2.11-20080614-0
  rl_bind_key@Base 2.11-20080614-0
  rl_bind_key_in_map@Base 2.11-20080614-0
@@ -252,12 +261,17 @@ libedit.so.2 libedit2 #MINVER#
  rl_completion_entry_function@Base 2.11-20080614-0
  rl_completion_matches@Base 2.11-20080614-0
  rl_completion_query_items@Base 2.11-20080614-0
+ rl_completion_suppress_append@Base 3.1-20210910
  rl_completion_type@Base 2.11-20080614-0
  rl_completion_word_break_hook@Base 3.1-20130611-0
+ rl_crlf@Base 3.1-20210910
  rl_deprep_term_function@Base 2.11-20080614-0
  rl_deprep_terminal@Base 2.11-20080614-0
- rl_did_startup_hook@Base 3.1-20180525-0
+#MISSING: 3.1-20210910# rl_did_startup_hook@Base 3.1-20180525-0
+ rl_ding@Base 3.1-20210910
+ rl_directory_completion_hook@Base 3.1-20210910
  rl_display_match_list@Base 2.11-20080614-0
+ rl_display_prompt@Base 3.1-20210910
  rl_done@Base 2.11-20080614-0
  rl_echo_signal_char@Base 3.1-20181209-0
  rl_end@Base 2.11-20080614-0
@@ -294,6 +308,7 @@ libedit.so.2 libedit2 #MINVER#
  rl_read_init_file@Base 2.11-20080614-0
  rl_read_key@Base 2.11-20080614-0
  rl_readline_name@Base 2.11-20080614-0
+ rl_readline_state@Base 3.1-20210910
  rl_readline_version@Base 3.1-20130611-0
  rl_redisplay@Base 2.11-20080614-0
  rl_redisplay_function@Base 2.11-20080614-0
@@ -302,8 +317,10 @@ libedit.so.2 libedit2 #MINVER#
  rl_resize_terminal@Base 3.1-20180525-0
  rl_set_keyboard_input_timeout@Base 3.1-20160618-0
  rl_set_keymap@Base 2.11-20080614-0
+ rl_set_keymap_name@Base 3.1-20210910
  rl_set_prompt@Base 3.1-20130611-0
  rl_set_screen_size@Base 2.11-20080614-0
+ rl_sort_completion_matches@Base 3.1-20210910
  rl_special_prefixes@Base 2.11-20080614-0
  rl_startup1_hook@Base 2.11-20080614-0
  rl_startup_hook@Base 2.11-20080614-0

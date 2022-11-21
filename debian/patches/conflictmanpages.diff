@@ -44,13 +44,13 @@ Index: libedit/doc/editline.3.roff
 @@ -27,7 +27,7 @@
  .\" POSSIBILITY OF SUCH DAMAGE.
  .\"
- .Dd November 9, 2018
+ .Dd August 15, 2021
 -.Dt EDITLINE 3
 +.Dt EDITLINE 3edit
  .Os
  .Sh NAME
  .Nm editline ,
-@@ -950,9 +950,9 @@ is a NUL terminated string to tokenize.
+@@ -964,9 +964,9 @@ is a NUL terminated string to tokenize.
  .Xr sh 1 ,
  .Xr signal 3 ,
  .Xr termcap 3 ,
