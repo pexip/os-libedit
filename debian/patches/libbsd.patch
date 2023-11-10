@@ -6,7 +6,7 @@ Index: libedit/configure.ac
 ===================================================================
 --- libedit.orig/configure.ac
 +++ libedit/configure.ac
-@@ -56,6 +56,13 @@ AC_CHECK_LIB(ncurses, tgetent,,
+@@ -55,6 +55,13 @@ AC_CHECK_LIB(ncurses, tgetent,,
    )]
  )
  
@@ -20,12 +20,12 @@ Index: libedit/configure.ac
  ### deprecate option --enable-widec to turn on use of wide-character support
  EL_DEPRECATE_WIDEC
  
-@@ -119,22 +126,26 @@ AC_PROG_GCC_TRADITIONAL
+@@ -119,26 +126,30 @@ AC_PROG_GCC_TRADITIONAL
+ #AC_FUNC_MALLOC
  #AC_FUNC_REALLOC
- AC_TYPE_SIGNAL
  AC_FUNC_STAT
--AC_CHECK_FUNCS([endpwent isascii memchr memset re_comp regcomp strcasecmp strchr strcspn strdup strerror strrchr strstr strtol issetugid wcsdup strlcpy strlcat getline vis strvis strunvis __secure_getenv secure_getenv])
-+AC_CHECK_FUNCS([endpwent isascii memchr memset re_comp regcomp strcasecmp strchr strcspn strdup strerror strrchr strstr strtol issetugid wcsdup getline __secure_getenv secure_getenv])
+-AC_CHECK_FUNCS([endpwent isascii memchr memset re_comp regcomp strcasecmp strchr strcspn strdup strerror strrchr strstr strtol issetugid wcsdup strlcpy strlcat vis strvis strunvis __secure_getenv secure_getenv reallocarr])
++AC_CHECK_FUNCS([endpwent isascii memchr memset re_comp regcomp strcasecmp strchr strcspn strdup strerror strrchr strstr strtol issetugid wcsdup vis strvis strunvis __secure_getenv secure_getenv reallocarr])
 +
 +# fgetln
 +AC_CHECK_FUNCS(fgetln, found_fgetln=yes, found_fgetln=no)
@@ -40,6 +40,11 @@ Index: libedit/configure.ac
 -AC_CHECK_FUNC(strlcat, found_strlcat=yes, found_strlcat=no)
 +AC_CHECK_FUNCS(strlcat, found_strlcat=yes, found_strlcat=no)
  AM_CONDITIONAL(HAVE_STRLCAT, [test "x$found_strlcat" = xyes])
+ 
+ # getline
+-AC_CHECK_FUNC(getline, found_getline=yes, found_getline=no)
++AC_CHECK_FUNCS(getline, found_getline=yes, found_getline=no)
+ AM_CONDITIONAL(HAVE_GETLINE, [test "x$found_getline" = xyes])
  
  # vis
 -AC_CHECK_FUNC(vis, found_vis=yes, found_vis=no)

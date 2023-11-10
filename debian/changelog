@@ -1,3 +1,90 @@
+libedit (3.1-20221030-2) unstable; urgency=medium
+
+  * Add a DEP-8 test exercising some of the functionality of libedit.
+
+ -- John Scott <jscott@posteo.net>  Mon, 21 Nov 2022 04:51:57 -0500
+
+libedit (3.1-20221030-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 02 Nov 2022 23:47:14 +0100
+
+libedit (3.1-20221009-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sat, 15 Oct 2022 21:57:30 +0200
+
+libedit (3.1-20210910-1) unstable; urgency=medium
+
+  * New upstream release
+    - fixes the fuzzing issue (Closes: #993567)
+  * Add new symbols:
+    - _rl_complete_mark_directories
+    - _rl_completion_prefix_display_length
+    - _rl_echoing_p
+    - _rl_erase_entire_line
+    - free_history_entry
+    - history_max_entries
+    - rl_abort
+    - rl_basic_quote_characters
+    - rl_completion_suppress_append
+    - rl_crlf
+    - rl_ding
+    - rl_directory_completion_hook
+    - rl_display_prompt
+    - rl_readline_state
+    - rl_set_keymap_name
+    - rl_sort_completion_matches
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 12 Sep 2021 09:42:29 +0200
+
+libedit (3.1-20210714-1) unstable; urgency=medium
+
+  * Upload in unstable
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 16 Aug 2021 08:59:24 +0200
+
+libedit (3.1-20210714-1~exp2) experimental; urgency=medium
+
+  * Fix the changelog (a tag was missing)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 16 Jul 2021 20:50:20 +0200
+
+libedit (3.1-20210714-1~exp1) experimental; urgency=medium
+
+  * New upstream release on Bastille day \o/
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 16 Jul 2021 20:29:54 +0200
+
+libedit (3.1-20210522-1~exp1) experimental; urgency=medium
+
+  * New upstream release
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sat, 29 May 2021 10:44:35 +0200
+
+libedit (3.1-20210419-1~exp1) experimental; urgency=medium
+
+  * New upstream release
+    New symbol: fn_complete2@Base
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 25 Apr 2021 23:57:40 +0200
+
+libedit (3.1-20210216-1~exp1) experimental; urgency=medium
+
+  * New upstream release.
+    First in experimental as we are in freeze mode
+    Maybe it will go in unstable
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 28 Feb 2021 15:14:11 +0100
+
+libedit (3.1-20191231-3) unstable; urgency=medium
+
+  * Source upload
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 18 Dec 2020 23:12:43 +0100
+
 libedit (3.1-20191231-2pexip3) pexip-bullseye; urgency=medium
 
   * Bullseye rebuild for ARM64 inclusion

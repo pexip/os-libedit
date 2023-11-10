@@ -1,0 +1,2 @@
+Test-Command: gcc -o "$AUTOPKGTEST_TMP"/test debian/tests/test.c $(pkgconf --cflags --libs libedit) && "$AUTOPKGTEST_TMP"/test
+Depends: build-essential, gcc, libedit-dev, pkgconf
