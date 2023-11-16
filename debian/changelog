@@ -1,3 +1,9 @@
+libedit (3.1-20221030-2pexip1) pexip-bookworm; urgency=medium
+
+  * Initial bookworm build
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Thu, 16 Nov 2023 10:06:03 +0000
+
 libedit (3.1-20221030-2) unstable; urgency=medium
 
   * Add a DEP-8 test exercising some of the functionality of libedit.
