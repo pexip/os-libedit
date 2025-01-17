@@ -69,7 +69,7 @@ Index: libedit/doc/editline.7.roff
 @@ -16,14 +16,14 @@
  .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  .\"
- .Dd May 7, 2016
+ .Dd April 6, 2024
 -.Dt EDITLINE 7
 +.Dt EDITLINE 7edit
  .Os
@@ -162,9 +162,9 @@ Index: libedit/doc/editrc.5.roff
 -.Xr editline 3 ,
 +.Xr editline 3edit ,
  which is usually
- .Va argv[0] .
+ .Va argv Ns Li [0] .
  .Ar command
-@@ -138,7 +138,7 @@ bindings.
+@@ -140,7 +140,7 @@ bindings.
  .El
  .Pp
  The
@@ -173,8 +173,8 @@ Index: libedit/doc/editrc.5.roff
  manual documents all editor commands and contains more information
  about macros and the input queue.
  .Pp
-@@ -297,7 +297,7 @@ List the values of all the terminal capa
- .Bl -tag -width "~/.editrcXXX"
+@@ -299,21 +299,21 @@ List the values of all the terminal capa
+ .Bl -tag -width Ev
  .It Ev EDITRC
  Names the default configuration file for the
 -.Xr editline 3
@@ -182,13 +182,12 @@ Index: libedit/doc/editrc.5.roff
  library.
  .El
  .Sh FILES
-@@ -305,14 +305,14 @@ library.
+ .Bl -tag -width Pa
  .It Pa ~/.editrc
- Last resort, if no other file is specified,
- user configuration file for the
+ Last resort user configuration file for the
 -.Xr editline 3
 +.Xr editline 3edit
- library.
+ library if no other file is specified.
  .El
  .Sh SEE ALSO
 -.Xr editline 3 ,
