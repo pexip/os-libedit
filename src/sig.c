@@ -1,4 +1,4 @@
-/*	$NetBSD: sig.c,v 1.26 2016/05/09 21:46:56 christos Exp $	*/
+/*	$NetBSD: sig.c,v 1.28 2024/12/18 15:38:52 christos Exp $	*/
 
 /*-
  * Copyright (c) 1992, 1993
@@ -37,7 +37,7 @@
 #if 0
 static char sccsid[] = "@(#)sig.c	8.1 (Berkeley) 6/4/93";
 #else
-__RCSID("$NetBSD: sig.c,v 1.26 2016/05/09 21:46:56 christos Exp $");
+__RCSID("$NetBSD: sig.c,v 1.28 2024/12/18 15:38:52 christos Exp $");
 #endif
 #endif /* not lint && not SCCSID */
 
@@ -167,9 +167,10 @@ sig_set(EditLine *el)
 	struct sigaction osa, nsa;
 
 	nsa.sa_handler = sig_handler;
-	nsa.sa_flags = 0;
+	nsa.sa_flags = SA_ONSTACK;
 	sigemptyset(&nsa.sa_mask);
 
+	sel = el;
 	(void) sigprocmask(SIG_BLOCK, &el->el_signal->sig_set, &oset);
 
 	for (i = 0; sighdl[i] != -1; i++) {
@@ -178,7 +179,6 @@ sig_set(EditLine *el)
 		    osa.sa_handler != sig_handler)
 			el->el_signal->sig_action[i] = osa;
 	}
-	sel = el;
 	(void) sigprocmask(SIG_SETMASK, &oset, NULL);
 }
 
@@ -199,7 +199,5 @@ sig_clr(EditLine *el)
 			(void)sigaction(sighdl[i],
 			    &el->el_signal->sig_action[i], NULL);
 
-	sel = NULL;		/* we are going to die if the handler is
-				 * called */
 	(void)sigprocmask(SIG_SETMASK, &oset, NULL);
 }
